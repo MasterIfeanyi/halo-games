@@ -1,0 +1,309 @@
+@import "./mixins";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+$brand: rgb(255, 228, 21);
+$light-brand: rgb(245, 232, 137);
+$brandText: #252ef3;
+$white: #ffffff;
+$black: black;
+$body: #e8ecf2;
+$neu-dark-color: #73787d;
+$neu-box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.8), 5px 5px 10px rgba(0,0,0,0.25);
+$neu-box-shadow-hover: -1px -1px 5px rgba(255, 255, 255, 0.6), 1px 1px 5px rgba(0,0,0,0.3);
+
+body{
+    line-height: 1.7;
+    background-color: $body;
+    font-size: 1rem;
+    font-family: monospace;
+}
+
+img {
+    width: 100%;
+}
+
+.logo{
+    width: 5rem;
+}
+
+ul {
+    text-decoration: none;    
+}
+
+li{
+    list-style-type: none;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-weight: 700;
+    letter-spacing: 0.5rem;
+}
+
+a {
+    @include transition-ease;
+    text-decoration: none;
+
+    &:hover{
+        color: $brandText;
+    }
+}
+
+section {
+    padding: 110px 0px;
+}
+
+
+.navbar{
+    box-shadow: $neu-box-shadow;
+    background: rgba(0,0,0,0.3);
+}
+
+.navbar .navbar-nav .nav-item a {
+    letter-spacing: 0.21rem;
+}
+
+.navbar .navbar-nav .nav-item {
+    margin-left: 0.8rem;
+}
+
+.bg-cover{
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.banner-image{
+    background-image: url(../../img/halo9.jpg);
+    position: relative;
+    z-index: 2;
+}
+
+@media (max-width: 992px) {
+
+    .navbar {
+        background: rgba(0,0,0,0.9);
+    }
+
+    .navbar-toggler{
+        background-color: black;
+        color: white;
+    }
+
+    .navbar-toggler-icon{
+        background-color: black;
+    }
+}
+
+@media (max-width: 992px) {
+    .btn {
+        font-size: 0.4rem;
+        letter-spacing: 0;
+        padding: 0.2rem;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        letter-spacing: 0;
+    }
+}
+
+@media (max-width: 992px) {
+    .hr-line {
+        width: 2rem;
+    }
+
+    .content p {
+        display: none;
+    }
+
+    .content h5 {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        font-size: 1rem;
+    }
+}
+
+.overlay {
+    background: rgba(0,0,0,0.3);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.hero {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+}
+
+.btn {
+    padding: 0.5rem 1.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.4rem;
+    font-size: 0.875rem;
+    position: relative;
+    border-radius: 0;
+
+    &-brand{
+        background-color: $brand;
+        color: $black;
+
+        &:hover{
+            background-color: $light-brand;
+        }
+    }
+
+    &-grey{
+        background-color: $neu-dark-color;
+        color: white;
+
+        &:hover {
+            background-color: $white;
+            color: black;
+        }
+    }
+}
+
+
+.btn-grey::after{
+    content: "";
+    border-top: 2px solid $body;
+    border-left: 0.1px solid $body;
+    border-right: 0.1px solid $body;
+    border-bottom: 2px solid $body;
+    position: absolute;
+    top: -6px;
+    left: -6px;
+    right: -6px;
+    bottom: -6px;
+}
+
+.btn-brand::after{
+    content: "";
+    border-top: 2px solid $brand;
+    border-left: 0.1px solid $light-brand;
+    border-right: 0.1px solid $light-brand;
+    border-bottom: 2px solid $brand;
+    position: absolute;
+    top: -6px;
+    left: -6px;
+    right: -6px;
+    bottom: -6px;
+}
+
+.slow{
+    @include transition-ease;
+}
+
+.linkarrow {
+
+    display: flex;
+    align-items: center;
+
+    & i {
+        @include transition-ease;
+    }
+
+    &:hover i {
+        transform: translate(2px, -2px);
+    }
+}
+
+.hero span i {
+    font-size: 1.6rem;
+}
+
+.line{
+    // border: 1px solid grey;
+    margin-bottom: 4rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cont{
+    max-width: 1400px;
+    margin: 10px auto;
+    width: 100%;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+// .two-col-grid{
+//     display: grid;
+//     grid-template-columns: 1fr 1fr;
+//     align-items: center;
+//     gap: 0px;
+// }
+
+
+.content{
+    background: rgb(23, 23, 23);
+    margin: 0;
+
+    & h5{
+        letter-spacing: 0rem;
+    }
+}
+
+.section-button{
+    max-width: 300px;
+    margin: 40px auto 40px auto;
+
+    & a {
+        text-align: center;
+    }
+}
+
+
+#contact {
+    background: rgb(0, 0, 0);
+}
+
+.hr-line {
+    width: 9rem;
+    border-bottom-color: grey;
+    border-bottom-style: dotted;
+    height: 4px;
+    display: inline-block;
+    margin: 2rem auto;
+}
+
+
+.social-links a{
+    width: 2.25rem;
+    height: 2.25rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    margin-right: 3rem;
+    transition: all 1s ease;
+    color: $white;
+
+    &:hover {
+        color: $brandText;
+    }
+}
+
+/* Footer */
+
+#footer {
+    background-color: rgb(15,15,15,);
+    color: $white;
+}
+
+.footer-top {
+    padding: 30px 0;
+}
+
+.footer-bottom {
+    padding: 0 0 30px 0;
+}
